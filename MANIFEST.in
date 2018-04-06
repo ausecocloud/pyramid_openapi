@@ -1,1 +1,4 @@
 include *.txt *.rst
+
+recursive-include src *.pt
+
