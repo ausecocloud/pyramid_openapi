@@ -64,7 +64,7 @@ class PyramidRequest(object):
         # return parameters based on location
         return {
             'path': self.request.matchdict,
-            'query': self.request.params,
+            'query': self.request.params.mixed(),
             'headers': self.request.headers,
             'cookies': self.request.cookies,
         }
@@ -76,7 +76,11 @@ class PyramidRequest(object):
     @property
     def body(self):
         if self.request.content_type == 'multipart/form-data':
-            return self.request.params
+            # openapi_core assumes that body is an instance of dict.
+            # werkzougs multidict supports that, but webobs multidict does not.
+            # return a simple dict here.
+            # see query params in self.parameters as well
+            return self.request.params.mixed()
         return self.request.body
 
     @property
