@@ -1,7 +1,8 @@
 from urllib.parse import urljoin
 
 from openapi_core import create_spec
-from openapi_core.validators import RequestValidator  # , ResponseValidator
+from openapi_core.validation.request.validators import RequestValidator
+# from openapi_core.validation.respone.validators import ResponseValidator
 from pyramid.path import AssetResolver
 import yaml
 
