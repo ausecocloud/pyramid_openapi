@@ -18,6 +18,10 @@ def includeme(config):
         reify=True
     )
 
+    # set defaults
+    settings.setdefault('openapi.swagger-ui-dist.version', '^3.20.1')
+    settings.setdefault('openapi.redoc.version', '^2.0.0-rc')
+
     config.add_route('pyramid_openapi.yaml', '/openapi.yaml')
     config.add_route('pyramid_openapi.json', '/openapi.json')
     config.add_route('pyramid_openapi.redoc', '/redoc')
