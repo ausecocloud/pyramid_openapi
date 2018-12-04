@@ -32,6 +32,7 @@ setup(
     install_requires=[
         'setuptools',
         'pyramid',
+        'pyramid_chameleon',
         'openapi-core',
     ],
     extras_require={

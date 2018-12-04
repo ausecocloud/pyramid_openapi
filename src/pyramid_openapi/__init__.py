@@ -4,6 +4,8 @@ from .renderer import YAML
 
 
 def includeme(config):
+    config.include('pyramid_chameleon')
+
     settings = config.get_settings()
     spec_path = settings.get('openapi.spec')
 
