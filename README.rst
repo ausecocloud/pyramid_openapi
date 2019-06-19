@@ -1,3 +1,5 @@
+No longer maintained use `pyramid_openapi3 <https://github.com/Pylons/pyramid_openapi3>`_ instead
+
 
 pyramid_openapi
 ===============
